@@ -1,6 +1,7 @@
 from neuron import h
 from matplotlib import pyplot as plt
 import argparse
+import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument('hotspot_size', metavar = 'hotspot', type=int)
@@ -50,5 +51,4 @@ axes[1,2].plot(h.tvec, -h.isyn, 'r')
 
 plt.xlim(275, 400)
 plt.savefig('outputs/figures/figure_3_supplementary_2b_%s.svg' % str(args.hotspot_size))
-
 

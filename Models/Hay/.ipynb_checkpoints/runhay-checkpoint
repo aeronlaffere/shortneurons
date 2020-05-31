@@ -28,18 +28,18 @@ done
 
 python figure_3b_summary.py 
 
-python set_params.py 1 350 100 0.01
-python figure_3_supplementary_1a_short.py
-python set_params.py 1 685 200 0.01
-python figure_3_supplementary_1a_long.py
-
 for tuft_gca_multiplier in 0 1 2 3 4 5 6 7 8
 do
     python set_params.py $tuft_gca_multiplier 350 100 0.01
-    python figure_3_supplementary_1b_short.py $tuft_gca_multiplier
+    python figure_3_supplementary_1a_short.py $tuft_gca_multiplier
     python set_params.py $tuft_gca_multiplier 685 200 0.01
-    python figure_3_supplementary_1b_long.py $tuft_gca_multiplier
+    python figure_3_supplementary_1a_long.py $tuft_gca_multiplier
 done
+
+python set_params.py 1 350 100 0.01
+python figure_3_supplementary_1b_short.py
+python set_params.py 1 685 200 0.01
+python figure_3_supplementary_1b_long.py
 
 python set_params.py 1 350 100 0.01
 python figure_3_supplementary_1c.py
@@ -82,7 +82,7 @@ python figure_3_supplementary_2c_summary.py
 rm -rf outputs/data/figure_3_supplementary_2d_long.csv
 rm -rf outputs/data/figure_3_supplementary_2d_short.csv
 
-for LVA_volume in 0.001 0.01 0.019 0.028 0.037 0.046 0.055 0.064 0.073 0.082 0.091 0.1
+for LVA_volume in 0.001 0.00121153 0.0014678 0.00177828 0.00215443 0.00261016 0.00316228 0.00383119 0.00464159 0.00562341 0.00681292 0.00825404 0.01 0.01211528 0.01467799 0.01778279 0.02154435 0.02610157 0.03162278 0.03831187 0.04641589 0.05623413 0.06812921 0.08254042 0.1     
 do
     python set_params.py 1 350 100 $LVA_volume
     python figure_3_supplementary_2d_short.py $LVA_volume

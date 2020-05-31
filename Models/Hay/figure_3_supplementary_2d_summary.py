@@ -16,7 +16,7 @@ with open('outputs/data/figure_3_supplementary_2d_long.csv') as csvfile:
     for row in csvreader:
         longdata.append(row[1])
 
-LVA_volume = np.arange(0.001, 0.1, 0.009)
+LVA_volume = np.geomspace(0.001, 0.1, 25)
 
 shortdata = [float(i) for i in shortdata]
 longdata = [float(i) for i in longdata]
@@ -24,7 +24,6 @@ longdata = [float(i) for i in longdata]
 plt.plot(LVA_volume, shortdata, 'k--')
 plt.plot(LVA_volume, longdata, 'k-')
 plt.xscale('log')
-plt.xticks([0.001, 0.01, 0.1], ['100:1', '10:1', '1:10'])
 plt.ylim(0, 0.002)
 plt.xlabel('HVA:LVA ratio')
 plt.ylabel('Integral')
